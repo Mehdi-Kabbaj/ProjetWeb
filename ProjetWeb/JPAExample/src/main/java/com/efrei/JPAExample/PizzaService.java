@@ -46,7 +46,7 @@ public class PizzaService {
 	}
 	
 	
-	@RequestMapping(value = "/pizza/{name}", method = RequestMethod.GET)
+	@RequestMapping(value = "/pizzas/{name}", method = RequestMethod.GET)
 	@ResponseStatus(HttpStatus.OK)
 	@Transactional(propagation = Propagation.REQUIRES_NEW, rollbackFor = Exception.class)
 	public Pizza Pizza(@PathVariable(value = "name") String name){
