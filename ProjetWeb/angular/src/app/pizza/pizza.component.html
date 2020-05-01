@@ -1,0 +1,24 @@
+<h2>My pizzas</h2>
+
+
+<div>
+  <label>Pizza name:
+	<input #pizzaName />
+	Price
+	<input #price/>
+  </label>
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button (click)="add(pizzaName.value,price.value); pizzaName.value='';price.value='';" onClick="window.location.reload();">
+    add
+  </button>
+</div>
+
+<ul class="pizza">
+  <li *ngFor="let pizza of pizzas">
+    <a routerLink="/detail/{{pizza.id}}">
+      <span class="badge">{{pizza.price}}$</span> {{pizza.name}}
+    </a>
+    <button class="delete" title="delete pizza"
+      (click)="delete(pizza)">x</button>
+  </li>
+</ul>

@@ -1,0 +1,11 @@
+<h2>Commandes</h2>
+
+<ul class="commande">
+  <li *ngFor="let commande of commandes">
+    <a>
+      <span class="badge">{{commande.id}}</span> {{commande.name}} /{{commande.pizza}}
+    </a>
+    <button class="delete" title="delete commande"
+      (click)="delete(commande.name)" onClick="window.location.reload();">x</button>
+  </li>
+</ul>

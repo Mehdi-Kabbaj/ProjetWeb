@@ -1,0 +1,27 @@
+<h3>Pizzas</h3>
+<div class="grid grid-pad">
+  <a *ngFor="let pizza of pizzas" class="col-1-4">
+    
+    <div class="module pizza" >
+    <h4>{{pizza.name}}/{{pizza.price}}$</h4>
+      <button class="delete" title="delete commande"
+      (click)="add(pizza)">ADD</button>
+    </div>
+  </a>
+</div>
+<li *ngFor="let pizza of commande">
+    <a>
+      <span class="badge">{{pizza.price}}$</span> {{pizza.name}}
+    </a>
+</li>
+
+<div>
+  <label>ENTREZ VOTRE NOM POUR COMMANDER:
+	<input #ClientName />
+  </label>
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button (click)="commander(ClientName.value); ClientName.value='';" >
+    add
+  </button>
+</div>
+<h3>Total a payer: {{prixTotal}}</h3>
